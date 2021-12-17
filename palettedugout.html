@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <script src="https://kit.fontawesome.com/1a22d99172.js" crossorigin="anonymous"></script> 
+        <link rel="stylesheet" href="scss/style.css">
         <link rel="icon" href="image/ohmyfood.png">
         <title>La palette du goût</title>
     </head>
@@ -13,73 +14,73 @@
     </header>
 
     <body>
-        <a href="img"><img src="image/palettedugout.jpg" alt="image"></a>
+        <div class="bottom"><a href="img"><img src="image/palettedugout.jpg" alt="image"></a></div>
 
         <section>
 
         <div class="menu">
             <h1>La palette du goût <i class="fas fa-heart"></i></h1>
 
-                <div class="entries">
+                <div class="first">
 
                     <h3>Entrées</h3>
 
-                    <div class="entries_one">
+                    <div class="entries">
                         <div>Fricassée d'escargot</div>
-                        <p>Au piment d'Espelette 25€</p>
+                        <div class="price">Au piment d'Espelette <div>25€</div></div>
                     </div>
 
-                    <div class="entries_two">
+                    <div class="entries">
                         <div>Foie gras de canard mi-cuit</div>
-                        <p>Et ses copeaux de truffe noire 35€</p>
+                        <div class="price">Et ses copeaux de truffe noire <div>35€</div></div>
                     </div>
 
-                    <div class="entries_three">
+                    <div class="entries">
                         <div>Oeuf au plat</div>
-                        <p>Assaisonné à la truffe sur lit de...  20€</p>
+                        <div class="price">Assaisonné à la truffe sur lit de...  <div>20€</div></div>
                     </div>
 
                 </div>
 
 
-               <div class="dishes">
+               <div class="second">
 
                     <h3>Plats</h3>
 
-                    <div class="dishes_one">
+                    <div class="dishes">
                         <div>Filet de boeuf aux herbes</div>
-                        <p>Accompagné de sa ribambelle de légu... 40€</p>
+                        <div class="price">Accompagné de sa ribambelle de légu... <div>40€</div></div>
                     </div>
 
-                    <div class="dishes_two">
+                    <div class="dishes">
                         <div>Parmentier de queue de boeuf</div>
-                        <p>À la truffe noire sur sa purée de panais 35€</p>
+                        <div class="price">À la truffe noire sur sa purée de panais <div>35€</div></div>
                     </div>
 
-                     <div class="dishes_three">
+                     <div class="dishes">
                         <div>Filet de turbot</div>
-                        <p>Aux agrumes 44€</p>
+                        <div class="price">Aux agrumes <div>44€</div></div>
                     </div>
 
                 </div>
                         
-                <div class="desserts">
+                <div class="last">
 
                     <h3>Desserts</h3>
 
-                     <div class="desserts_one">
+                     <div class="desserts">
                         <div>Paris-Brest</div>
-                        <p>Revisité 18€</p>
+                        <div class="price">Revisité <div>18€</div></div>
                      </div>
 
-                    <div class="desserts_two">
+                    <div class="desserts">
                         <div>Macaron au chocolat d'exception</div> 
-                        <p>Et glace à la vanille de Madagascar 22€</p>
+                        <div class="price">Et glace à la vanille de Madagascar <div>22€</div></div>
                     </div>
 
-                    <div class="desserts_three">
+                    <div class="desserts">
                         <div>Mousse au chocolat</div> 
-                        <p>Au piment d'Espelette et à la truffe noire 23€</p>  
+                        <div class="price">Au piment d'Espelette et à la truffe noire <div>23€</div></div>  
                     </div>
 
                 <button type="commander" class="order">Commander</button>

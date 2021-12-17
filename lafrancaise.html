@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <script src="https://kit.fontawesome.com/1a22d99172.js" crossorigin="anonymous"></script> 
+        <link rel="stylesheet" href="scss/style.css">
         <link rel="icon" href="image/ohmyfood.png">
         <title>A la française</title>
     </head>
@@ -13,77 +14,85 @@
     </header>
 
     <body>
-        <a href="img"><img src="image/lafrancaise.jpg" alt="image"></a>
+        <div class="bottom"><a href="img"><img src="image/lafrancaise.jpg" alt="image"></a></div>
 
         <section>
 
         <div class="menu">
             <h1>A la française <i class="fas fa-heart"></i></h1>
 
-                <div class="entries">
+                <div class="first">
 
                     <h3>Entrées</h3>
 
-                    <div class="entries_one">
+                    <div class="entries">
                         <div>Tartare de pouple acidulé</div>
-                        <p>Aux zests d'orange 25€</p>
+                        <div class="price">Aux zests d'orange<div>25€</div></div>
                     </div>
 
-                    <div class="entries_two">
+                    <div class="entries">
                         <div>Velouté de légumes d'antan</div>
-                        <p>Carotte, panais, topinambour 35€</p>
+                        <div class="price">Carotte, panais, topinambour<div>35€</div></div>
+                        
                     </div>
 
-                    <div class="entries_three">
+                    <div class="entries">
                         <div>Soupe à l'oignon</div>
-                        <p>Revisitée  20€</p>
+                        <div class="price">Revisitée<div>20€</div></div>
                     </div>
 
                 </div>
 
 
-               <div class="dishes">
+               <div class="second">
 
                     <h3>Plats</h3>
 
-                    <div class="dishes_one">
+                    <div class="dishes">
                         <div>Coquilles Saint-Jacques</div>
-                        <p>Accompagnées d'une purée de panais 40€</p>
+                        <div class="price">Accompagnées d'une purée de panais<div>40€</div></div>
+                        
                     </div>
 
-                    <div class="dishes_two">
+                    <div class="dishes">
                         <div>Magret de canard</div>
-                        <p>Et parmentier de pommes de terres 35€</p>
+                        <div class="price">Et parmentier de pommes de terres<div>35€</div></div>
+                        
                     </div>
 
-                     <div class="dishes_three">
+                     <div class="dishes">
                         <div>Pigeonneau d'Ille-et-Vilaine</div>
-                        <p>Sur son lit de gnocchis aux légumes 44€</p>
+                        <div class="price">Sur son lit de gnocchis aux légumes<div>44€</div></div>
+                        
                     </div>
 
                 </div>
                         
-                <div class="desserts">
+                <div class="last">
 
                     <h3>Desserts</h3>
 
-                     <div class="desserts_one">
+                     <div class="desserts">
                         <div>Pétales de violettes glacés</div>
-                        <p>Et purée de noisettes 18€</p>
+                        <div class="price">Et purée de noisettes<div>18€</div></div>
+                        
                      </div>
 
-                    <div class="desserts_two">
-                        <div>Fondant au chocolat</div> 
-                        <p>Revisité 22€</p>
+                    <div class="desserts">
+                        <div>Fondant au chocolat</div>  
+                        <div class="price">Revisité<div>22€</div></div>
+                       
                     </div>
 
-                    <div class="desserts_three">
+                    <div class="desserts">
                         <div>Millefeuille croustillant</div> 
-                        <p>Myrtilles et pâte d'amande 23€</p>  
+                        <div class="price">Myrtilles et pâte d'amande<div>23€</div></div> 
+                        
                     </div>
 
                 <button type="commander" class="order">Commander</button>
                 
+                </div>
          </div>
     </section>
 

@@ -1,10 +1,254 @@
-.search_bar
-{
-    background-color: grey;
-    border: none;
+$primary:#9356DC;
+$secondary: #FF79DA;
+$tertiary:#99E2D0;
+
+@font-face {
+    font-family: "roboto";
+    src: url("https://fonts.google.com/specimen/Roboto?query=roboto");
 }
 
-img
+@font-face {
+    font-family: "shrikhand";
+    src: url("https://fonts.google.com/specimen/Shrikhand?query=shrikhand");
+}
+body 
+{
+    width: 370px;
+    font-family: "roboto";
+}
+header 
+{
+    font-family: "shrikhand";
+}
+header img 
 {
     width: 200px;
+    margin-left: 80px;
+}
+.search_bar /*bar de recherche, ville*/
+{
+    background-color: rgb(208, 206, 206);
+    border: none;
+    padding: 15px;
+    align-items: baseline;
+
+        input {
+            border: none;
+            background-color:rgb(208, 206, 206);
+            margin-left: 5px;
+        }
+
+            i {
+                margin-left: 90px;
+            }
+}
+.introduction /*présentation de l'entreprie*/
+{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(242, 242, 242);
+    align-items: center;
+    padding: 30px;
+
+        h1 {
+            margin-left: 20px;
+        }
+
+            p {
+                margin-left: px;
+            }
+}
+
+button {
+        color: white;
+        border: 0px solid ;
+        border-radius: 30px;
+        background-color: $primary;
+        padding:15px;
+
+            &:hover{
+                background: rgba($primary, 0.4);
+
+            }
+                
+}
+
+
+.choice /*fonctionnement*/
+{
+    display: flex;
+    flex-direction: column;
+    
+    h1{
+        margin-left: 20px;
+    }
+        ol {
+            display: flex;
+            flex-direction: column;
+            align-items: baseline;
+            border-radius: 100%;
+        }
+        ol /*liste à puce numéro coloré*/
+        {
+            list-style:none; counter-reset: li;
+        }
+        li::before {content:counter(li);color:$primary;
+        border-radius: 100%;}
+
+            li {
+                box-shadow: 5px 5px 5px rgb(213, 209, 209);
+                border-radius: 20px;
+                background-color: rgb(242, 242, 242);
+                align-items: baseline;
+                margin: 8px;
+                padding: 10px;
+                
+            }
+
+                i { 
+                    align-items: baseline;
+                    padding: 5px;
+                    margin: 0px;
+                }
+
+                        span{
+                            padding-right: 7px;
+                            padding-left: 8px;
+                        }      
+}
+.restaurants
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+
+        h1{
+            margin-right: 50%;
+        }
+
+            .vignette /*restaurants proposés*/
+        {
+            display: flex;
+            flex-direction: column;
+            box-shadow: 5px 5px 5px #F2F2F2;
+            border-radius: 15px;
+            align-items: baseline;
+            margin-top: 2%; 
+            margin: 2%;
+        }
+
+                 .place {
+                    display: flex;
+                    justify-content: space-between;
+                    }
+
+
+                    img {
+                    width: 300px;
+                    height: 150px;
+                    object-fit: cover;
+                    object-position: center bottom;
+                    border-radius: 10% 10% 0 0;
+                    }
+                    
+}
+@mixin layout /*propriétés mise en page pour les menus*/
+{
+    display: flex; 
+    flex-direction: column;            
+    box-shadow: 5px 5px 5px rgb(213, 209, 209);
+    border-radius: 15px;
+    margin: 10px;
+    padding: 10px;
+}
+.menu /*style des menus proposés*/
+{   
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    border-top: 2px solid;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 10px;
+    
+    h3{
+        text-transform: uppercase;
+        border-top: 0px;
+        border-bottom: 3px solid rgb(152, 206, 152);
+        width: 40px;
+
+    }
+        
+    .entries
+    {
+        @include layout
+    }
+    .price{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .dishes{
+        @include layout
+    }
+        .desserts
+        {
+            @include layout
+        }
+    button
+    {
+        color: white;
+        border: 2px solid $secondary;
+        border-radius: 30px;
+        background-color: $secondary;
+        padding:15px;
+        margin-left: 40%;
+    }
+
+                      
+}
+.bottom /*image du menu*/
+{
+    width: 350px;
+
+        img {
+            width: 350px;
+        }
+}
+
+footer /*pied de page identique partout*/
+{
+    background-color: black;
+
+        .bloc_footer{
+            display: flex;
+            flex-direction: column;
+        }
+        
+
+                h2{
+                    color: white;
+                    padding-left: 10px;
+                }
+
+                    ul {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: baseline;
+                        color: white;
+                    }
+
+                        li {
+                            list-style: none;
+                        }
+
+                            i{
+                                padding-right: 10px;
+                            }
+
+                                a{
+                                    text-decoration:none;
+                                    color:white;
+                                }
 }
