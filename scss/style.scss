@@ -1,19 +1,17 @@
-$primary:#9356DC;
-$secondary: #FF79DA;
-$tertiary:#99E2D0;
+$medium:375px;
 
-@font-face {
-    font-family: "roboto";
-    src: url("https://fonts.google.com/specimen/Roboto?query=roboto");
-}
+@import "regles.scss";
+@import "responsive.scss";
 
-@font-face {
-    font-family: "shrikhand";
-    src: url("https://fonts.google.com/specimen/Shrikhand?query=shrikhand");
-}
-body 
+
+.b
 {
-    width: 370px;
+    font-family: "roboto";
+}
+body  
+{
+    width:375px;
+    margin: auto;
     font-family: "roboto";
 }
 header 
@@ -30,7 +28,7 @@ header img
     background-color: rgb(208, 206, 206);
     border: none;
     padding: 15px;
-    align-items: baseline;
+    text-align: center;
 
         input {
             border: none;
@@ -48,14 +46,17 @@ header img
     flex-direction: column;
     background-color: rgb(242, 242, 242);
     align-items: center;
-    padding: 30px;
+    padding: 20px;
+    padding-bottom: 50px;
 
         h1 {
             margin-left: 20px;
+            text-align: center;
         }
 
             p {
-                margin-left: px;
+                font-family: "roboto_light";
+                text-align: center;
             }
 }
 
@@ -67,7 +68,8 @@ button {
         padding:15px;
 
             &:hover{
-                background: rgba($primary, 0.4);
+                background: rgba($primary, 0.3);
+                background: linear-gradient($secondary,$primary);
 
             }
                 
@@ -81,40 +83,50 @@ button {
     
     h1{
         margin-left: 20px;
+    
     }
         ol {
             display: flex;
             flex-direction: column;
             align-items: baseline;
             border-radius: 100%;
+            list-style: none;
+            counter-reset: li;
         }
-        ol /*liste à puce numéro coloré*/
-        {
-            list-style:none; counter-reset: li;
+         
+        li::before {
+             counter-increment: li ;
+             content:counter(li);
+             color:white;
+             border-radius: 100%;
+             position: relative;
+             left:-14px;
+             border: 2px solid $primary;
+             padding: 4px;
+             font-size: x-small;
+             background-color: $primary;
+     }
+
+        li {
+            box-shadow: 5px 5px 5px rgb(213, 209, 209);
+            border-radius: 20px;
+            background-color: rgb(242, 242, 242);
+            align-items: baseline;
+            margin: 8px;
+            padding: 10px;
+            
         }
-        li::before {content:counter(li);color:$primary;
-        border-radius: 100%;}
 
-            li {
-                box-shadow: 5px 5px 5px rgb(213, 209, 209);
-                border-radius: 20px;
-                background-color: rgb(242, 242, 242);
-                align-items: baseline;
-                margin: 8px;
-                padding: 10px;
-                
-            }
+        i { 
+            align-items: baseline;
+            padding: 5px;
+            margin: 6px;
+        }
 
-                i { 
-                    align-items: baseline;
-                    padding: 5px;
-                    margin: 0px;
-                }
-
-                        span{
-                            padding-right: 7px;
-                            padding-left: 8px;
-                        }      
+        span{
+            padding-right: 7px;
+            padding-left: 8px;
+        }      
 }
 .restaurants
 {
@@ -138,9 +150,32 @@ button {
             margin: 2%;
         }
 
+                .new{
+                    position: relative;
+                    left: 220px;
+                    bottom: 150px;
+                    color: rgb(0, 140, 0);
+                    border: 2px solid #02ffc5;
+                    background:#02ffc5;
+                    padding: 4px;
+                    font-family: "roboto";
+                    font-size: small;
+                }
                  .place {
                     display: flex;
                     justify-content: space-between;
+                    font-family: "roboto_light";
+                    padding-bottom: 10px;
+                    padding-top: 5px;
+                    }
+
+                .heart{
+                    display: flex;
+                    justify-content: space-between;
+                    margin-left:  170px; 
+                }
+                    .i{
+                        font-weight: 0;
                     }
 
 
@@ -150,18 +185,11 @@ button {
                     object-fit: cover;
                     object-position: center bottom;
                     border-radius: 10% 10% 0 0;
+                    padding-bottom: 10px;
                     }
                     
 }
-@mixin layout /*propriétés mise en page pour les menus*/
-{
-    display: flex; 
-    flex-direction: column;            
-    box-shadow: 5px 5px 5px rgb(213, 209, 209);
-    border-radius: 15px;
-    margin: 10px;
-    padding: 10px;
-}
+
 .menu /*style des menus proposés*/
 {   
     display: flex;
@@ -171,46 +199,75 @@ button {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     padding: 10px;
+    margin-bottom: 60px;
+
+    h1{
+        font-style: italic;
+    }
+    
     
     h3{
         text-transform: uppercase;
         border-top: 0px;
         border-bottom: 3px solid rgb(152, 206, 152);
         width: 40px;
+        font-family: "roboto_light";
 
     }
-        
-    .entries
+    
+    .first
     {
+        @include mensuration
+    }
+    .entries 
+    {
+        animation: 3s ease-in-out;
         @include layout
+        
     }
     .price{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        font-family: "roboto_light";
+        font-size: 15px;
+    }
+    .second 
+    {
+        @include mensuration
     }
     .dishes{
+        animation: 6s ease-in-out;
         @include layout
     }
-        .desserts
-        {
-            @include layout
-        }
+    .last 
+    {
+        @include mensuration
+    }
+    .desserts
+    {
+        animation: 9s ease-in-out;
+        @include layout
+    }
+}
     button
     {
         color: white;
-        border: 2px solid $secondary;
         border-radius: 30px;
         background-color: $secondary;
-        padding:15px;
-        margin-left: 40%;
-    }
+        padding:15px 30px 15px;
+        margin-left: 100px;
+        margin-top: 30px;
+        font-family: "roboto";
+    
+        &:hover{
+            background: rgba($primary, 0.3);
+            background: linear-gradient($secondary,$primary);
 
-                      
-}
+        }
+    }
 .bottom /*image du menu*/
 {
-    width: 350px;
 
         img {
             width: 350px;
@@ -224,12 +281,16 @@ footer /*pied de page identique partout*/
         .bloc_footer{
             display: flex;
             flex-direction: column;
+            padding: 10px;
         }
         
 
                 h2{
                     color: white;
-                    padding-left: 10px;
+                    padding-left: 20px;
+                    font-family: "shrikhand";
+                    margin-bottom: auto;
+                    font-size: large;
                 }
 
                     ul {
@@ -237,10 +298,16 @@ footer /*pied de page identique partout*/
                         flex-direction: column;
                         align-items: baseline;
                         color: white;
+                        padding-left: 10px;
                     }
+
+                        .foot{
+                            padding: 5px;
+                        }
 
                         li {
                             list-style: none;
+                            padding: 3px;
                         }
 
                             i{

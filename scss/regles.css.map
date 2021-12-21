@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAIA,UAAU;EACN,WAAW,EAAE,QAAQ;EACrB,GAAG,EAAE,kCAAkC,CAAC,cAAc,EACtD,iCAAiC,CAAC,kBAAkB;;;AAGxD,UAAU;EACN,WAAW,EAAE,cAAc;EAC3B,GAAG,EAAE,kCAAkC,CAAC,cAAc,EACtD,iCAAiC,CAAC,kBAAkB;;;AAGxD,UAAU;EACN,WAAW,EAAE,WAAW;EACxB,GAAG,EAAE,0CAA0C,CAAC,cAAc,EAC9D,yCAAyC,CAAC,kBAAkB",
+    "sources": [
+        "regles.scss"
+    ],
+    "names": [],
+    "file": "regles.css"
+}

@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "roboto";
+  src: url("../roboto/Roboto-Black.woff") format("woff"), url("../roboto/Roboto-Black.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "roboto_light";
+  src: url("../roboto/Roboto-Light.woff") format("woff"), url("../roboto/Roboto-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "shrikhand";
+  src: url("../shrikhand/Shrikhand-Regular.woff") format("woff"), url("../shrikhand/Shrikhand-Regular.ttf") format("truetype");
+}
+/*# sourceMappingURL=regles.css.map */
