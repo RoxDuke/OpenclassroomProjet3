@@ -1,7 +1,5 @@
-$medium:375px;
 
 @import "regles.scss";
-@import "responsive.scss";
 
 
 .b
@@ -10,10 +8,20 @@ $medium:375px;
 }
 body  
 {
-    width:375px;
-    margin: auto;
     font-family: "roboto";
+
+@media (max-width:768px)
+{
+        width: 375px;
+    }
+@media (max-width:992px)
+{
+    width: auto;
 }
+    
+}
+
+
 header 
 {
     font-family: "shrikhand";
@@ -60,7 +68,7 @@ header img
             }
 }
 
-button {
+button{
         color: white;
         border: 0px solid ;
         border-radius: 30px;
@@ -82,7 +90,7 @@ button {
     flex-direction: column;
     
     h1{
-        margin-left: 20px;
+        margin-left: 40px;
     
     }
         ol {
@@ -100,7 +108,7 @@ button {
              color:white;
              border-radius: 100%;
              position: relative;
-             left:-14px;
+             left:-20px;
              border: 2px solid $primary;
              padding: 4px;
              font-size: x-small;
@@ -113,15 +121,22 @@ button {
             background-color: rgb(242, 242, 242);
             align-items: baseline;
             margin: 8px;
-            padding: 10px;
-            
+            padding: 15px;
+            width: 80%;
         }
+            li:hover{
+            background:rgba($primary,0.2) ;
 
+            }
         i { 
             align-items: baseline;
             padding: 5px;
             margin: 6px;
         }
+
+            i:hover{
+                color: $primary;
+            }
 
         span{
             padding-right: 7px;
@@ -134,6 +149,8 @@ button {
     flex-direction: column;
     align-items: center;
     padding: 30px;
+    margin-top: 40px;
+    background: rgb(242, 242, 242);
 
         h1{
             margin-right: 50%;
@@ -147,7 +164,9 @@ button {
             border-radius: 15px;
             align-items: baseline;
             margin-top: 2%; 
+            margin-bottom: 10px;
             margin: 2%;
+            background: white;
         }
 
                 .new{
@@ -174,9 +193,6 @@ button {
                     justify-content: space-between;
                     margin-left:  170px; 
                 }
-                    .i{
-                        font-weight: 0;
-                    }
 
 
                     img {
@@ -250,7 +266,7 @@ button {
         @include layout
     }
 }
-    button
+    button.order
     {
         color: white;
         border-radius: 30px;

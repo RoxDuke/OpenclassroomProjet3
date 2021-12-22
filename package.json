@@ -1,0 +1,21 @@
+{
+  "name": "openclassroom_projet3",
+  "version": "1.0.0",
+  "description": "site mobile de restauration",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./scss/style.scss:./scss/style.css -w --style compressed",
+    "prefix":"postcss ./scss/style.css --use autoprefixer -d ./scss/prefixed/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RoxDuke/OpenclassroomProjet3.git"
+  },
+  "author": "Roxane Duquenoy",
+  "license": "ISC",
+  "browserslist":"last 10 versions",
+  "bugs": {
+    "url": "https://github.com/RoxDuke/OpenclassroomProjet3/issues"
+  },
+  "homepage": "https://github.com/RoxDuke/OpenclassroomProjet3#readme"
+}
