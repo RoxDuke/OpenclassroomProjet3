@@ -19,27 +19,38 @@
 
 body {
   font-family: "roboto";
-}
-
-@media (max-width: 768px) {
-  body {
-    width: 375px;
-  }
-}
-
-@media (max-width: 992px) {
-  body {
-    width: auto;
-  }
+  margin: 0;
+  background: #f6f6f6;
 }
 
 header {
   font-family: "shrikhand";
 }
 
+header .return {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 10px;
+  margin-left: 15px;
+}
+
+header a {
+  color: black;
+  margin-left: 10px;
+}
+
+header i {
+  font-size: large;
+}
+
 header img {
-  width: 200px;
-  margin-left: 80px;
+  width: 150px;
+  margin-left: 110px;
+  margin-top: 10px;
 }
 
 .search_bar {
@@ -107,10 +118,14 @@ button:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  background: white;
+  padding-top: 30px;
+  padding-bottom: 40px;
 }
 
 .choice h1 {
   margin-left: 40px;
+  margin-bottom: 0;
 }
 
 .choice ol {
@@ -156,7 +171,7 @@ button:hover {
 }
 
 .choice li:hover {
-  background: rgba(147, 86, 220, 0.2);
+  background: rgba(147, 86, 220, 0.1);
 }
 
 .choice i {
@@ -188,8 +203,17 @@ button:hover {
       -ms-flex-align: center;
           align-items: center;
   padding: 30px;
-  margin-top: 40px;
-  background: #f2f2f2;
+}
+
+@media screen and (min-width: 1024px) {
+  .restaurants {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
 }
 
 .restaurants h1 {
@@ -207,9 +231,6 @@ button:hover {
   -webkit-box-shadow: 5px 5px 5px #F2F2F2;
           box-shadow: 5px 5px 5px #F2F2F2;
   border-radius: 15px;
-  -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
   margin-top: 2%;
   margin-bottom: 10px;
   margin: 2%;
@@ -217,37 +238,15 @@ button:hover {
 }
 
 .restaurants .new {
-  position: relative;
-  left: 220px;
-  bottom: 150px;
+  position: absolute;
+  margin-left: 220px;
+  margin-top: 10px;
   color: #008c00;
   border: 2px solid #02ffc5;
   background: #02ffc5;
   padding: 4px;
   font-family: "roboto";
   font-size: small;
-}
-
-.restaurants .place {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  font-family: "roboto_light";
-  padding-bottom: 10px;
-  padding-top: 5px;
-}
-
-.restaurants .heart {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin-left: 170px;
 }
 
 .restaurants img {
@@ -261,6 +260,50 @@ button:hover {
   padding-bottom: 10px;
 }
 
+.restaurants .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5px;
+}
+
+.restaurants .info i {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  font-size: x-large;
+  font-weight: inherit;
+  margin-left: 100px;
+}
+
+.restaurants .info i:active {
+  background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
+  background: linear-gradient(#FF79DA, #9356DC);
+}
+
+.restaurants .txt_div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 3;
+      -ms-flex-positive: 3;
+          flex-grow: 3;
+  margin-bottom: 10px;
+  width: 90px;
+}
+
+.restaurants .txt_light {
+  font-family: "roboto_light";
+  margin-top: 5px;
+}
+
 .menu {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -272,15 +315,32 @@ button:hover {
   -webkit-box-align: baseline;
       -ms-flex-align: baseline;
           align-items: baseline;
-  border-top: 2px solid;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-top-left-radius: 35px;
+  border-top-right-radius: 35px;
   padding: 10px;
-  margin-bottom: 60px;
+  background: #f6f6f6;
+  position: relative;
+  bottom: 55px;
 }
 
 .menu h1 {
-  font-style: italic;
+  font-family: "shrikhand";
+  margin-right: 70px;
+  margin-left: 10px;
+}
+
+.menu .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+.menu i {
+  font-size: x-large;
+  font-weight: inherit;
 }
 
 .menu h3 {
@@ -292,12 +352,36 @@ button:hover {
 }
 
 .menu .first {
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-name: slidein;
+          animation-name: slidein;
   width: 100%;
 }
 
+@-webkit-keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
 .menu .entries {
-  -webkit-animation: 3s ease-in-out;
-          animation: 3s ease-in-out;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -310,6 +394,7 @@ button:hover {
   border-radius: 15px;
   margin: 10px;
   padding: 10px;
+  background: white;
 }
 
 .menu .price {
@@ -328,12 +413,25 @@ button:hover {
 }
 
 .menu .second {
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-name: slidein;
+          animation-name: slidein;
   width: 100%;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
 }
 
 .menu .dishes {
-  -webkit-animation: 6s ease-in-out;
-          animation: 6s ease-in-out;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -346,15 +444,29 @@ button:hover {
   border-radius: 15px;
   margin: 10px;
   padding: 10px;
+  background: white;
 }
 
 .menu .last {
+  -webkit-animation-duration: 7s;
+          animation-duration: 7s;
+  -webkit-animation-name: slidein;
+          animation-name: slidein;
   width: 100%;
 }
 
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
 .menu .desserts {
-  -webkit-animation: 9s ease-in-out;
-          animation: 9s ease-in-out;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -367,6 +479,7 @@ button:hover {
   border-radius: 15px;
   margin: 10px;
   padding: 10px;
+  background: white;
 }
 
 button.order {
@@ -385,8 +498,20 @@ button.order:hover {
   background: linear-gradient(#FF79DA, #9356DC);
 }
 
+[type="checkbox"] {
+  opacity: 0;
+  position: relative;
+  left: 290px;
+}
+
+[type="checkbox"] + label {
+  position: relative;
+  left: 290px;
+  background: #84ead1;
+}
+
 .bottom img {
-  width: 350px;
+  width: 100%;
 }
 
 footer {
@@ -402,17 +527,23 @@ footer .bloc_footer {
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 10px;
+  color: white;
+  padding-left: 30px;
+  padding-bottom: 20px;
+  font-size: large;
 }
 
 footer h2 {
   color: white;
-  padding-left: 20px;
   font-family: "shrikhand";
-  margin-bottom: auto;
   font-size: large;
 }
 
-footer ul {
+footer .foot {
+  padding: 5px;
+}
+
+footer .police {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -420,24 +551,17 @@ footer ul {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
-  color: white;
-  padding-left: 10px;
-}
-
-footer .foot {
+  font-family: "roboto_light";
   padding: 5px;
 }
 
-footer li {
-  list-style: none;
-  padding: 3px;
+footer span {
+  padding-top: 5px;
 }
 
 footer i {
   padding-right: 10px;
+  font-size: small;
 }
 
 footer a {

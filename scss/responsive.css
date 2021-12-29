@@ -1,1 +1,11 @@
-/* No CSS *//*# sourceMappingURL=responsive.css.map */
+@media screen and (min-width: 1024px) {
+  .restaurants {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+/*# sourceMappingURL=responsive.css.map */
