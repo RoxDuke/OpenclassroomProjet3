@@ -20,18 +20,55 @@ $tertiary:#99E2D0;
     url("../shrikhand/Shrikhand-Regular.ttf") format('truetype');
 }
 
-
 @mixin layout /*propriétés mise en page pour les menus*/
 {
     display: flex; 
-    flex-direction: column;            
+    flex-direction: row;            
     box-shadow: 5px 5px 5px rgb(213, 209, 209);
     border-radius: 15px;
     margin: 10px;
     padding: 10px;
     background: white;
+    justify-content: space-between;
+    .detail{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
 }
+$cochegreen: #84ead1;
 
+
+@mixin select /*animations selections plats*/
+{
+
+        .coche
+        {
+
+            &:active
+            {
+                
+                animation-duration: 4s;
+                animation-fill-mode: forwards;
+                visibility: visible;
+                animation-name: selected;
+                @keyframes selected 
+                {
+                    from {
+                    margin-left: 100%;
+                    width: 0%;
+                    }
+                
+                    to {
+                    margin-left: 0%;
+                    width: 100%;
+                    background-color:#84ead1;
+                    }
+                }    
+            }
+        }
+
+}
 @mixin mensuration
 {
     width: 100%; 
