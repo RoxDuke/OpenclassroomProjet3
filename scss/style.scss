@@ -9,7 +9,9 @@
 }
 .loader 
 {
-    background: rgba($primary, 0.3)
+    background: linear-gradient(#ff79da, #9356dc);
+    width: 100%;
+    height: 100%;
 }
 .fa-spinner
 {
@@ -18,18 +20,30 @@
     left: 25%;
     font-size: 200px;
     color: $secondary;
-    animation-duration: 3s;
-    animation-name: loader;
-    @keyframes loader {
-        from {
-          transform: rotate(0deg);
-        }
-      
-        to {
-          transform: rotate(360deg);
-        }
-
+    animation: spin 3s;   
+    animation-fill-mode: none;
+    @media#{$tablet}
+    {
+        left: 35%;
+        top:70%;
+    }
+    @media#{$desktop}
+    {
+        left: 45%;
+        top:70%;
+    }
+    &::after
+    {
+        content: "";
+        opacity: 0;
+    }
 }
+@keyframes spin {
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);
+         opacity: 0;
+        }
+    }
 body  
 {
     font-family: "roboto";
@@ -55,14 +69,26 @@ header
     a{
         color: black;
         margin-left: 10px;
+        @media#{$tablet}
+        {
+            margin-right: 200px;
+        }
     }
     i{
         font-size: large;
         margin-right: 60px;
+        @media#{$desktop}
+        {
+            margin-left: -400px;
+        }
     }
     .logo
     {
         margin-left: 110px;
+        @media#{$desktop}
+        {
+            margin-left: 60px;
+        }
     }
     @media #{$tablet}
     {
@@ -427,6 +453,16 @@ button
         font-family: "shrikhand";
         margin-right: 70px;
         margin-left: 10px;
+        @media#{$tablet}
+        {
+            margin-right: 90px;
+            margin-left: 220px;
+        }
+        @media#{$desktop}
+        {
+            margin-left: 400px;
+            margin-right: 150px;
+        }
     }
     .title
     {
@@ -462,9 +498,10 @@ button
         }
         @include mensuration
     }
-    // .entries 
-    // {
-    //    @include layout;
+    .entries 
+    {
+        @include layout;
+    }
     //    @if (&:active) {
     //     $cochevisibility:visible;
     //    }
@@ -536,9 +573,17 @@ button
         border-radius: 30px;
         background-color: $secondary;
         padding:15px 30px 15px;
-        margin-left: 100px;
+        margin-left: 110px;
         margin-top: 30px;
         font-family: "roboto";
+        @media#{$tablet}
+        {
+            margin-left: 300px;
+        }
+        @media#{$desktop}
+        {
+            margin-left: 450px;
+        }
     
         &:hover
         {
