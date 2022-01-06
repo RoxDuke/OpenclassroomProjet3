@@ -7,30 +7,53 @@
 {
     font-family: "roboto";
 }
-.loader 
+.loader-background /*spinner ouverture de page accueil*/
 {
+    position:absolute;
     background: linear-gradient(#ff79da, #9356dc);
-    width: 100%;
-    height: 100%;
+    height: 350%;
+    width: 350%;
+    margin: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 60%;
+    animation: disapear 3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes disapear {
+    99%{
+        opacity: 0;
+        width: 200%;
+        height: 200%;
+    }
+    100%{
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
 }
 .fa-spinner
 {
     position:absolute;
-    top: 100%;
+    opacity: 100%;
+    top: 48%;
     left: 25%;
     font-size: 200px;
     color: $secondary;
     animation: spin 3s;   
-    animation-fill-mode: none;
+    animation-fill-mode: forwards;
     @media#{$tablet}
     {
-        left: 35%;
-        top:70%;
+        left: 30%;
+        top:65%;
+        font-size: 300px;
     }
     @media#{$desktop}
     {
-        left: 45%;
+        left: 35%;
         top:70%;
+        font-size: 400px;
     }
     &::after
     {
@@ -38,12 +61,13 @@
         opacity: 0;
     }
 }
-@keyframes spin {
+@keyframes spin 
+{
     0%{transform: rotate(0deg);}
     100%{transform: rotate(360deg);
-         opacity: 0;
+            opacity: 0;
         }
-    }
+}
 body  
 {
     font-family: "roboto";
@@ -108,8 +132,6 @@ header img
     width: 150px;
     margin-top: 10px;
 }
-
-
 .search_bar /*bar de recherche, ville*/
 {
     background-color: #e9e9e9;
@@ -153,18 +175,18 @@ header img
 
 button
 {
-        color: white;
-        border: 0px solid ;
-        border-radius: 30px;
-        background-color: $primary;
-        padding:15px;
+    color: white;
+    border: 0px solid ;
+    border-radius: 30px;
+    background-color: $primary;
+    padding:15px;
 
-            &:hover
-            {
-                background: rgba($primary, 0.3);
-                background: linear-gradient($secondary,$primary);
-            }
-                
+        &:hover
+        {
+            background: rgba($primary, 0.3);
+            background: linear-gradient($secondary,$primary);
+        }
+            
 }
 
 
@@ -326,7 +348,8 @@ button
             }
         }
 
-        .new{
+        .new
+        {
             position: absolute;
             margin-left: 220px;
             margin-top: 10px;
@@ -397,15 +420,26 @@ button
             }   
             i:active
             {
-                
                 color:#d500da;
                 font-weight:bold;  
+                animation-fill-mode: forwards;
+                animation-direction: normal;
+                animation-delay: 250ms;
+
+                @keyframes progress{
+                    0%{
+                        margin-left: 100%;
+                    }
+                    100%{
+                        margin-left: 0%;
+                        opacity: 1;
+                    }
+                }
             }
             @media#{$desktop}
             {
                 i:hover
                 {
-
                     color:#d500da;
                     font-weight: bold;
                 }
@@ -496,23 +530,17 @@ button
               width: 100%;
             }
         }
-        @include mensuration
+        @include mensuration;
     }
     .entries 
     {
         @include layout;
-    }
-    //    @if (&:active) {
-    //     $cochevisibility:visible;
-    //    }
-    // }
+        &:active .coche
+        {
+            @include select;
+        }
 
-    // // .entries:active
-    // // {
-    // //     @include select
-    // // }
-    
-    
+    }
     .price
     {
         display: flex;
@@ -525,46 +553,53 @@ button
     {
         animation-duration: 5s;
         animation-name: slidein;
-        @include mensuration
+        @include mensuration;
     }
     .dishes
     {
-        
-        @include layout
+        @include layout;
     }
     .last 
     {
         animation-duration: 7s;
         animation-name: slidein;
         @include mensuration
+         
     }
     .desserts
     {
-       
         @include layout
     }
     
 }
+.fa-check-circle
+{
+    visibility: hidden;
+    font-size: inherit;
+    margin-top: 8px;
+    color: white;
+}
 
-// .coche
-// {
-//     visibility: hidden;
-// }
-
-// .coche i 
-// {
-//     font-size: inherit;
-//     margin-top: 8px;
-// }
-
-// .entries:active
-// {
-//     .coche{
-//         $cochevisibility:visible;
-//         visibility: $cochevisibility;
-//         @extend .coche
-//     }   
-// }
+.entries:active
+{
+    .coche
+    {
+        width: 100%;
+        height: 100%;
+        animation-name: selected;
+        animation-fill-mode: forwards;
+    
+    }
+    .fa-check-circle
+    {
+        $cochevisibility:visible;
+        visibility: $cochevisibility;
+        animation-name:selected;
+        animation-fill-mode: forwards;
+        // @include select;
+        
+    }
+}
 
 
     button.order
