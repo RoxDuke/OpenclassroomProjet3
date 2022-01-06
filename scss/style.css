@@ -13,6 +13,104 @@
   src: url("../shrikhand/Shrikhand-Regular.woff") format("woff"), url("../shrikhand/Shrikhand-Regular.ttf") format("truetype");
 }
 
+@-webkit-keyframes disapear /*animations loader background*/ {
+  99% {
+    opacity: 0;
+    width: 200%;
+    height: 200%;
+  }
+  100% {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+}
+
+@keyframes disapear /*animations loader background*/ {
+  99% {
+    opacity: 0;
+    width: 200%;
+    height: 200%;
+  }
+  100% {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+}
+
+@-webkit-keyframes spin /*animation spinner loader*/ {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes spin /*animation spinner loader*/ {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes progress /*remplissage des coeurs progressif*/ {
+  0% {
+    opacity: 0.33;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes progress /*remplissage des coeurs progressif*/ {
+  0% {
+    opacity: 0.33;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes selected /*animations selections plats*/ {
+  30% {
+    width: 0px;
+    opacity: 0;
+  }
+  100% {
+    width: 50px;
+    background-color: #99E2D0;
+    height: 40px;
+    visibility: visible;
+    opacity: 1;
+    border-radius: 0px 10px 10px 0px;
+  }
+}
+
+@keyframes selected /*animations selections plats*/ {
+  30% {
+    width: 0px;
+    opacity: 0;
+  }
+  100% {
+    width: 50px;
+    background-color: #99E2D0;
+    height: 40px;
+    visibility: visible;
+    opacity: 1;
+    border-radius: 0px 10px 10px 0px;
+  }
+}
+
 .b {
   font-family: "roboto";
 }
@@ -25,38 +123,13 @@
   width: 350%;
   margin: 0;
   top: 0;
+  left: 0;
   bottom: 0;
   opacity: 60%;
   -webkit-animation: disapear 3s;
           animation: disapear 3s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
-}
-
-@-webkit-keyframes disapear {
-  99% {
-    opacity: 0;
-    width: 200%;
-    height: 200%;
-  }
-  100% {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-}
-
-@keyframes disapear {
-  99% {
-    opacity: 0;
-    width: 200%;
-    height: 200%;
-  }
-  100% {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
 }
 
 .fa-spinner {
@@ -91,30 +164,6 @@
 .fa-spinner::after {
   content: "";
   opacity: 0;
-}
-
-@-webkit-keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-    opacity: 0;
-  }
-}
-
-@keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-    opacity: 0;
-  }
 }
 
 body {
@@ -550,6 +599,17 @@ button:hover {
   color: #3f3f3f;
 }
 
+.restaurants .info i:hover {
+  font-weight: bold;
+  color: #d200da;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-name: progress;
+          animation-name: progress;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+}
+
 @media only screen and (min-width:768px) and (max-width:1023px) {
   .restaurants .info i {
     font-size: xx-large;
@@ -560,44 +620,6 @@ button:hover {
 @media only screen and (min-width:1024px) {
   .restaurants .info i {
     margin-left: 250px;
-  }
-}
-
-.restaurants .info i:active {
-  color: #d500da;
-  font-weight: bold;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-direction: normal;
-          animation-direction: normal;
-  -webkit-animation-delay: 250ms;
-          animation-delay: 250ms;
-}
-
-@-webkit-keyframes progress {
-  0% {
-    margin-left: 100%;
-  }
-  100% {
-    margin-left: 0%;
-    opacity: 1;
-  }
-}
-
-@keyframes progress {
-  0% {
-    margin-left: 100%;
-  }
-  100% {
-    margin-left: 0%;
-    opacity: 1;
-  }
-}
-
-@media only screen and (min-width:1024px) {
-  .restaurants .info i:hover {
-    color: #d500da;
-    font-weight: bold;
   }
 }
 
@@ -682,9 +704,20 @@ button:hover {
           align-items: baseline;
 }
 
-.menu i {
+.menu .fa-heart {
   font-size: x-large;
   font-weight: inherit;
+}
+
+.menu .fa-heart:hover {
+  font-weight: bold;
+  color: #d200da;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-name: progress;
+          animation-name: progress;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
 }
 
 .menu h3 {
@@ -737,7 +770,6 @@ button:hover {
           box-shadow: 5px 5px 5px #d5d1d1;
   border-radius: 15px;
   margin: 10px;
-  padding: 10px;
   background: white;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -753,40 +785,17 @@ button:hover {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100%;
+  padding: 10px;
 }
 
-.menu .entries:active .coche .coche:active {
+.menu .entries:hover .fa-check-circle {
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
-  visibility: visible;
+  padding-top: 20px;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
   -webkit-animation-name: selected;
           animation-name: selected;
-}
-
-@-webkit-keyframes selected {
-  from {
-    margin-right: -100%;
-    width: 0%;
-  }
-  to {
-    margin-right: 0%;
-    width: 100%;
-    background-color: #99E2D0;
-    height: 150%;
-  }
-}
-
-@keyframes selected {
-  from {
-    margin-right: -100%;
-    width: 0%;
-  }
-  to {
-    margin-right: 0%;
-    width: 100%;
-    background-color: #99E2D0;
-    height: 150%;
-  }
 }
 
 .menu .price {
@@ -824,7 +833,6 @@ button:hover {
           box-shadow: 5px 5px 5px #d5d1d1;
   border-radius: 15px;
   margin: 10px;
-  padding: 10px;
   background: white;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -840,6 +848,17 @@ button:hover {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100%;
+  padding: 10px;
+}
+
+.menu .dishes:hover .fa-check-circle {
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  padding-top: 20px;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-name: selected;
+          animation-name: selected;
 }
 
 .menu .last {
@@ -862,7 +881,6 @@ button:hover {
           box-shadow: 5px 5px 5px #d5d1d1;
   border-radius: 15px;
   margin: 10px;
-  padding: 10px;
   background: white;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -878,30 +896,17 @@ button:hover {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100%;
+  padding: 10px;
 }
 
-.fa-check-circle {
-  visibility: hidden;
-  font-size: inherit;
-  margin-top: 8px;
-  color: white;
-}
-
-.entries:active .coche {
-  width: 100%;
-  height: 100%;
-  -webkit-animation-name: selected;
-          animation-name: selected;
+.menu .desserts:hover .fa-check-circle {
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
-}
-
-.entries:active .fa-check-circle {
-  visibility: visible;
+  padding-top: 20px;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
   -webkit-animation-name: selected;
           animation-name: selected;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
 }
 
 button.order {
@@ -930,6 +935,17 @@ button.order:hover {
   background: rgba(147, 86, 220, 0.3);
   background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
   background: linear-gradient(#FF79DA, #9356DC);
+}
+
+.fa-check-circle {
+  visibility: hidden;
+  font-weight: bolder;
+  color: white;
+  font-size: large;
+}
+
+.coche {
+  text-align: center;
 }
 
 .bottom img {

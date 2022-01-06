@@ -27,49 +27,78 @@ $tertiary:#99E2D0;
     box-shadow: 5px 5px 5px rgb(213, 209, 209);
     border-radius: 15px;
     margin: 10px;
-    padding: 10px;
+    
     background: white;
     justify-content: space-between;
     .detail{
         display: flex;
         flex-direction: column;
         width: 100%;
+        padding: 10px;
     }
-}
-$cochegreen: #84ead1;
-
-
-@mixin select /*animations selections plats*/
-{
-
-        .coche
-        {
-
-            &:active
-            {
-                
-                animation-fill-mode: forwards;
-                visibility: visible;
-                animation-name: selected;
-                @keyframes selected 
-                {
-                    from {
-                    margin-right: -100%;
-                    width: 0%;
-                    }
-                
-                    to {
-                    margin-right: 20%;
-                    width: 100%;
-                    background-color:#99E2D0;
-                    height: 150%;
-                    }
-                }    
-            }
-        }
-
 }
 @mixin mensuration
 {
     width: 100%; 
 }
+
+@mixin select /*check circle lors de l'animation*/
+{
+    .fa-check-circle
+    {
+    animation-fill-mode: forwards;
+    padding-top: 20px;
+    animation-duration: 3s;
+    animation-name: selected;
+    }
+}
+
+@keyframes disapear /*animations loader background*/
+{
+    99%{
+        opacity: 0;
+        width: 200%;
+        height: 200%;
+    }
+    100%{
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+}
+
+@keyframes spin /*animation spinner loader*/
+{
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);
+            opacity: 0;
+        }
+}
+
+@keyframes progress /*remplissage des coeurs progressif*/
+{
+    0%{
+        opacity: 0.33;
+    }
+    100%{
+        opacity: 1;
+
+    }
+}
+
+@keyframes selected /*animations selections plats*/
+        {
+            30% {
+            width: 0px;
+            opacity: 0;
+            }
+        
+            100% {
+            width: 50px;
+            background-color:#99E2D0;
+            height: 40px;
+            visibility: visible;
+            opacity: 1;
+            border-radius: 0px 10px 10px 0px;
+            }
+        }
