@@ -82,8 +82,8 @@
 }
 
 @-webkit-keyframes selected /*animations selections plats*/ {
-  30% {
-    width: 0px;
+  0% {
+    width: 20px;
     opacity: 0;
   }
   100% {
@@ -92,13 +92,15 @@
     height: 40px;
     visibility: visible;
     opacity: 1;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     border-radius: 0px 10px 10px 0px;
   }
 }
 
 @keyframes selected /*animations selections plats*/ {
-  30% {
-    width: 0px;
+  0% {
+    width: 20px;
     opacity: 0;
   }
   100% {
@@ -107,6 +109,8 @@
     height: 40px;
     visibility: visible;
     opacity: 1;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     border-radius: 0px 10px 10px 0px;
   }
 }
@@ -155,7 +159,7 @@
 
 @media only screen and (min-width:1024px) {
   .fa-spinner {
-    left: 35%;
+    left: 40%;
     top: 70%;
     font-size: 400px;
   }
@@ -786,6 +790,8 @@ button:hover {
           flex-direction: column;
   width: 100%;
   padding: 10px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .menu .entries:hover .fa-check-circle {
@@ -849,6 +855,8 @@ button:hover {
           flex-direction: column;
   width: 100%;
   padding: 10px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .menu .dishes:hover .fa-check-circle {
@@ -897,6 +905,8 @@ button:hover {
           flex-direction: column;
   width: 100%;
   padding: 10px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .menu .desserts:hover .fa-check-circle {
@@ -946,6 +956,7 @@ button.order:hover {
 
 .coche {
   text-align: center;
+  visibility: hidden;
 }
 
 .bottom img {

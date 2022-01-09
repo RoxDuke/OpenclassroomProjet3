@@ -82,8 +82,8 @@
 }
 
 @-webkit-keyframes selected /*animations selections plats*/ {
-  30% {
-    width: 0px;
+  0% {
+    width: 20px;
     opacity: 0;
   }
   100% {
@@ -92,13 +92,15 @@
     height: 40px;
     visibility: visible;
     opacity: 1;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     border-radius: 0px 10px 10px 0px;
   }
 }
 
 @keyframes selected /*animations selections plats*/ {
-  30% {
-    width: 0px;
+  0% {
+    width: 20px;
     opacity: 0;
   }
   100% {
@@ -107,6 +109,8 @@
     height: 40px;
     visibility: visible;
     opacity: 1;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     border-radius: 0px 10px 10px 0px;
   }
 }

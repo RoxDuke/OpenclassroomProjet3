@@ -39,7 +39,7 @@
     }
     @media#{$desktop}
     {
-        left: 35%;
+        left: 40%;
         top:70%;
         font-size: 400px;
     }
@@ -587,6 +587,7 @@ button.order
 .coche /*coche qui permet de centrer icone circle*/
 {
     text-align: center;
+    visibility: hidden;
 }
 .bottom img/*image du menu*/
 {
