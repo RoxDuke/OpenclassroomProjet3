@@ -1,16 +1,16 @@
 @font-face {
   font-family: "roboto";
-  src: url("../roboto/Roboto-Black.woff") format("woff"), url("../roboto/Roboto-Black.ttf") format("truetype");
+  src: url("../polices/roboto/Roboto-Black.woff") format("woff"), url("../polices/roboto/Roboto-Black.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "roboto_light";
-  src: url("../roboto/Roboto-Light.woff") format("woff"), url("../roboto/Roboto-Light.ttf") format("truetype");
+  src: url("../polices/roboto/Roboto-Light.woff") format("woff"), url("..//polices/roboto/Roboto-Light.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "shrikhand";
-  src: url("../shrikhand/Shrikhand-Regular.woff") format("woff"), url("../shrikhand/Shrikhand-Regular.ttf") format("truetype");
+  src: url("../polices/shrikhand/Shrikhand-Regular.woff") format("woff"), url("../polices/shrikhand/Shrikhand-Regular.ttf") format("truetype");
 }
 
 @-webkit-keyframes disapear /*animations loader background*/ {
@@ -84,16 +84,12 @@
 @-webkit-keyframes selected /*animations selections plats*/ {
   0% {
     width: 20px;
-    opacity: 0;
   }
   100% {
     width: 50px;
     background-color: #99E2D0;
     height: 40px;
     visibility: visible;
-    opacity: 1;
-    text-overflow: ellipsis;
-    white-space: nowrap;
     border-radius: 0px 10px 10px 0px;
   }
 }
@@ -101,17 +97,41 @@
 @keyframes selected /*animations selections plats*/ {
   0% {
     width: 20px;
-    opacity: 0;
   }
   100% {
     width: 50px;
     background-color: #99E2D0;
     height: 40px;
     visibility: visible;
-    opacity: 1;
-    text-overflow: ellipsis;
-    white-space: nowrap;
     border-radius: 0px 10px 10px 0px;
+  }
+}
+
+@-webkit-keyframes pirouette {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes pirouette {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    visibility: visible;
+    opacity: 1;
   }
 }
 /*# sourceMappingURL=regles.css.map */

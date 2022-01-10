@@ -1,6 +1,6 @@
 
-@import "regles.scss";
-@import "responsive.scss";
+@import "../regles_scss/regles.scss";
+@import "../responsive_scss/responsive.scss";
 
 
 .b
@@ -10,7 +10,7 @@
 .loader-background /*spinner ouverture de page accueil*/
 {
     position:absolute;
-    background: linear-gradient(#ff79da, #9356dc);
+    background: rgb(204, 201, 201);
     height: 350%;
     width: 350%;
     margin: 0;
@@ -34,13 +34,13 @@
     @media#{$tablet}
     {
         left: 30%;
-        top:65%;
+        top:40%;
         font-size: 300px;
     }
     @media#{$desktop}
     {
-        left: 40%;
-        top:70%;
+        left: 42%;
+        top:40%;
         font-size: 400px;
     }
     &::after
@@ -511,6 +511,7 @@ button
         &:hover
         {
             @include select;
+            @include ellipse;
         }       
     }
     .price
@@ -519,8 +520,12 @@ button
         flex-direction: row;
         justify-content: space-between;
         font-family: "roboto_light";
-        font-size: 15px;
+        font-size: 14px;      
     }
+    .elipse
+    {
+        white-space: nowrap;
+    }   
     .second 
     {
         animation-duration: 5s;
@@ -533,6 +538,7 @@ button
         &:hover
         {
             @include select;
+            @include ellipse;
         }  
     }
     .last 
@@ -548,6 +554,7 @@ button
         &:hover
         {
             @include select;
+            @include ellipse;
         }  
     }
     

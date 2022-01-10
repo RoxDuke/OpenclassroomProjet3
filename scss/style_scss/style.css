@@ -1,16 +1,16 @@
 @font-face {
   font-family: "roboto";
-  src: url("../roboto/Roboto-Black.woff") format("woff"), url("../roboto/Roboto-Black.ttf") format("truetype");
+  src: url("../polices/roboto/Roboto-Black.woff") format("woff"), url("../polices/roboto/Roboto-Black.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "roboto_light";
-  src: url("../roboto/Roboto-Light.woff") format("woff"), url("../roboto/Roboto-Light.ttf") format("truetype");
+  src: url("../polices/roboto/Roboto-Light.woff") format("woff"), url("..//polices/roboto/Roboto-Light.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "shrikhand";
-  src: url("../shrikhand/Shrikhand-Regular.woff") format("woff"), url("../shrikhand/Shrikhand-Regular.ttf") format("truetype");
+  src: url("../polices/shrikhand/Shrikhand-Regular.woff") format("woff"), url("../polices/shrikhand/Shrikhand-Regular.ttf") format("truetype");
 }
 
 @-webkit-keyframes disapear /*animations loader background*/ {
@@ -84,16 +84,12 @@
 @-webkit-keyframes selected /*animations selections plats*/ {
   0% {
     width: 20px;
-    opacity: 0;
   }
   100% {
     width: 50px;
     background-color: #99E2D0;
     height: 40px;
     visibility: visible;
-    opacity: 1;
-    text-overflow: ellipsis;
-    white-space: nowrap;
     border-radius: 0px 10px 10px 0px;
   }
 }
@@ -101,17 +97,41 @@
 @keyframes selected /*animations selections plats*/ {
   0% {
     width: 20px;
-    opacity: 0;
   }
   100% {
     width: 50px;
     background-color: #99E2D0;
     height: 40px;
     visibility: visible;
-    opacity: 1;
-    text-overflow: ellipsis;
-    white-space: nowrap;
     border-radius: 0px 10px 10px 0px;
+  }
+}
+
+@-webkit-keyframes pirouette {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes pirouette {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    visibility: visible;
+    opacity: 1;
   }
 }
 
@@ -121,8 +141,7 @@
 
 .loader-background {
   position: absolute;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ff79da), to(#9356dc));
-  background: linear-gradient(#ff79da, #9356dc);
+  background: #ccc9c9;
   height: 350%;
   width: 350%;
   margin: 0;
@@ -152,15 +171,15 @@
 @media only screen and (min-width:768px) and (max-width:1023px) {
   .fa-spinner {
     left: 30%;
-    top: 65%;
+    top: 40%;
     font-size: 300px;
   }
 }
 
 @media only screen and (min-width:1024px) {
   .fa-spinner {
-    left: 40%;
-    top: 70%;
+    left: 42%;
+    top: 40%;
     font-size: 400px;
   }
 }
@@ -790,18 +809,32 @@ button:hover {
           flex-direction: column;
   width: 100%;
   padding: 10px;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 }
 
-.menu .entries:hover .fa-check-circle {
+.menu .entries:hover .coche {
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   padding-top: 20px;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
   -webkit-animation-name: selected;
           animation-name: selected;
+}
+
+.menu .entries:hover .fa-check-circle {
+  -webkit-animation-name: pirouette;
+          animation-name: pirouette;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.menu .entries:hover .elipse {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 210px;
 }
 
 .menu .price {
@@ -816,7 +849,11 @@ button:hover {
       -ms-flex-pack: justify;
           justify-content: space-between;
   font-family: "roboto_light";
-  font-size: 15px;
+  font-size: 14px;
+}
+
+.menu .elipse {
+  white-space: nowrap;
 }
 
 .menu .second {
@@ -855,18 +892,32 @@ button:hover {
           flex-direction: column;
   width: 100%;
   padding: 10px;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 }
 
-.menu .dishes:hover .fa-check-circle {
+.menu .dishes:hover .coche {
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   padding-top: 20px;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
   -webkit-animation-name: selected;
           animation-name: selected;
+}
+
+.menu .dishes:hover .fa-check-circle {
+  -webkit-animation-name: pirouette;
+          animation-name: pirouette;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.menu .dishes:hover .elipse {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 210px;
 }
 
 .menu .last {
@@ -905,18 +956,32 @@ button:hover {
           flex-direction: column;
   width: 100%;
   padding: 10px;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 }
 
-.menu .desserts:hover .fa-check-circle {
+.menu .desserts:hover .coche {
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   padding-top: 20px;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
   -webkit-animation-name: selected;
           animation-name: selected;
+}
+
+.menu .desserts:hover .fa-check-circle {
+  -webkit-animation-name: pirouette;
+          animation-name: pirouette;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.menu .desserts:hover .elipse {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 210px;
 }
 
 button.order {

@@ -4,20 +4,20 @@ $tertiary:#99E2D0;
 
 @font-face {
     font-family: "roboto";
-    src: url("../roboto/Roboto-Black.woff") format('woff'),
-    url("../roboto/Roboto-Black.ttf") format('truetype');
+    src: url("../polices/roboto/Roboto-Black.woff") format('woff'),
+    url("../polices/roboto/Roboto-Black.ttf") format('truetype');
 }
 
 @font-face {
     font-family: "roboto_light";
-    src: url("../roboto/Roboto-Light.woff") format('woff'),
-    url("../roboto/Roboto-Light.ttf") format('truetype');
+    src: url("../polices/roboto/Roboto-Light.woff") format('woff'),
+    url("..//polices/roboto/Roboto-Light.ttf") format('truetype');
 }
 
 @font-face {
     font-family: "shrikhand";
-    src: url("../shrikhand/Shrikhand-Regular.woff") format('woff'),
-    url("../shrikhand/Shrikhand-Regular.ttf") format('truetype');
+    src: url("../polices/shrikhand/Shrikhand-Regular.woff") format('woff'),
+    url("../polices/shrikhand/Shrikhand-Regular.ttf") format('truetype');
 }
 
 @mixin layout /*propriétés mise en page pour les menus*/
@@ -29,13 +29,22 @@ $tertiary:#99E2D0;
     margin: 10px;
     background: white;
     justify-content: space-between;
+    
     .detail{
         display: flex;
         flex-direction: column;
         width: 100%;
         padding: 10px;
-        white-space: nowrap;
+    }
+}
+@mixin ellipse
+{
+    .elipse
+    {
         text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        width: 210px;
     }
 }
 @mixin mensuration
@@ -45,12 +54,20 @@ $tertiary:#99E2D0;
 
 @mixin select /*check circle lors de l'animation*/
 {
-    .fa-check-circle
+    .coche
     {
     animation-fill-mode: forwards;
     padding-top: 20px;
-    animation-duration: 3s;
+    animation-duration: 1s;
     animation-name: selected;
+   
+    
+    }
+    .fa-check-circle
+    {
+        animation-name: pirouette;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
     }
 }
 
@@ -93,7 +110,6 @@ $tertiary:#99E2D0;
         {
             0% {
             width: 20px;
-            opacity: 0;
             }
         
             100% {
@@ -101,9 +117,18 @@ $tertiary:#99E2D0;
             background-color:#99E2D0;
             height: 40px;
             visibility: visible;
-            opacity: 1;
-            text-overflow: ellipsis;
-            white-space: nowrap;
             border-radius: 0px 10px 10px 0px;
             }
         }
+@keyframes pirouette
+{
+    0%{
+        transform: rotate(0deg);
+        opacity: 0;
+    }
+    100%{
+        transform: rotate(360deg);
+        visibility: visible;
+        opacity: 1;
+    }
+}
