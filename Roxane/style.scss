@@ -1,0 +1,65 @@
+body
+{
+    margin: auto;
+    width: 1300px;
+    font-family: 'Courier New', Courier, monospace;
+}
+header
+{
+    img
+    {
+    width: 150px;
+    border-radius: 30px;
+    }
+    .presentation
+    {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .identite
+    {
+        padding: 30px;
+        font-size: x-large;
+        font-weight: bold;
+    }
+}
+#professionnelle
+{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+
+    .formations
+    {
+        display: flex;
+        align-items: baseline;
+        flex-wrap: wrap;
+        width: 50%;
+        border: 2px solid grey;
+        padding: 10px;
+
+        h1 
+        {
+           margin: 10px;
+        }
+        .fa-user-graduate
+        {
+            align-items: baseline;
+            font-size: x-large;
+        }
+        ul 
+        {
+            padding: 5px;
+            list-style: none;
+        }
+        li 
+        {
+            padding: 5px;
+            margin: 10px;
+            border: solid 2px green;
+            border-radius: 5px;
+        }
+    }
+        
+}

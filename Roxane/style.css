@@ -1,0 +1,80 @@
+body {
+  margin: auto;
+  width: 1300px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+header img {
+  width: 150px;
+  border-radius: 30px;
+}
+
+header .presentation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .identite {
+  padding: 30px;
+  font-size: x-large;
+  font-weight: bold;
+}
+
+#professionnelle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+#professionnelle .formations {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 50%;
+  border: 2px solid grey;
+  padding: 10px;
+}
+
+#professionnelle .formations h1 {
+  margin: 10px;
+}
+
+#professionnelle .formations .fa-user-graduate {
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  font-size: x-large;
+}
+
+#professionnelle .formations ul {
+  padding: 5px;
+  list-style: none;
+}
+
+#professionnelle .formations li {
+  padding: 5px;
+  margin: 10px;
+  border: solid 2px green;
+  border-radius: 5px;
+}
+/*# sourceMappingURL=style.css.map */
